@@ -1,0 +1,36 @@
+.cont {
+  height: 70px;
+  width: 300px;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 15px;
+}
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: rgb(46, 170, 237);
+}
+
+.btn {
+  display: block;
+  border-radius: 8px;
+  border: 2px solid rgb(216, 231, 17);
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  background-color: #280606;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ed0d0d;
+}
