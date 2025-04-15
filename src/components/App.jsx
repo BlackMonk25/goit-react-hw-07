@@ -10,7 +10,7 @@ import {
   selectIsError,
   selectIsLoading,
 } from "../redux/contactsSlice";
-import css from "./App.module.css";
+import css from "../components/App.module.css";
 
 export default function App() {
   const dispatch = useDispatch();
