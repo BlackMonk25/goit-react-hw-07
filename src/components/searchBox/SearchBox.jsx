@@ -1,31 +1,26 @@
-import { Formik, Form, Field } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import { changeNameFilter, selectNameFilters } from "../../redux/filtersSlice";
+
 import css from "./SearchBox.module.css";
-import { useDispatch } from "react-redux";
-import { contactFilter } from "../../redux/filtersSlice";
 
 export default function SearchBox() {
   const dispatch = useDispatch();
+  const nameFilter = useSelector(selectNameFilters);
 
-  const handleSubmit = (e) => {
-    const filterAction = contactFilter(e.target.value);
-    dispatch(filterAction);
+  const handleChange = (event) => {
+    dispatch(changeNameFilter(event.target.value));
   };
 
   return (
-    <>
-      <Formik>
-        <Form className={css.cont}>
-          <label htmlFor="username" className={css.label}>
-            Find contacts by name
-          </label>
-          <Field
-            onChange={handleSubmit}
-            type="text"
-            name="username"
-            className={css.input}></Field>
-        </Form>
-      </Formik>
-    </>
+    <div>
+      <p>Find contacts by name</p>
+      <input
+        className={css.input}
+        type="text"
+        value={nameFilter}
+        onChange={handleChange}
+      />
+    </div>
   );
 }
 
